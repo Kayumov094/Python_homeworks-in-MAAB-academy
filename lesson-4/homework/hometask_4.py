@@ -26,8 +26,8 @@ print(f"yangilanagan data {data}") # birinchi usul
 data.update({"son6" : 30, "son7": 32}) # update() metodi oraqali yangiladim 
 print(f"Yangilangan dict quyidagicha {data}") # yangilangan datani print qildim 
 
-data1 = {"meva1": "olma", "meva2": "anor", "meva3": "banana"} 
-data2 = {"meva4": "kivi", "meva5": "shaftoli"}
+data1 = {"meva1": "olma", "meva2": "anor", "meva3": "banana"} # data1 nomli lugat yaratib oldim 
+data2 = {"meva4": "kivi", "meva5": "shaftoli"} # data2 nomli yangi lugat yaratib oldim 
 print(f"Ikkita dict ni birlashtirirdim {data1|data2}") # ikkita dictni birlashtirish orqali yangi dict hosil qildim 
 
 
@@ -39,11 +39,11 @@ print(new_data)
 
 # 3. Bir nechta lug‘atlarni birlashtiring
 # Yangi lug'at yaratish uchun quyidagi lug'atlarni birlashtirish uchun Python skriptini yozing.
-dic1 = {1: 10, 2: 20}
+dic1 = {1: 10, 2: 20} # namuna uchun dic1, dic2, dic3 berilgan 
 dic2 = {3: 30, 4: 40}
 dic3 = {5: 50, 6: 60}
 
-print(f"Dictlarni birlashtirish uchun {dic1|dic2|dic3}")
+print(f"Dictlarni birlashtirish uchun {dic1|dic2|dic3}") #| yordamida to'plamlarni birlashtirdim 
 
 # 4. Generate a Dictionary with Squares
 # Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form (x, x*x).
@@ -51,14 +51,14 @@ print(f"Dictlarni birlashtirish uchun {dic1|dic2|dic3}")
 # Sample Dictionary (n = 5):
 
 n = 5
-new_dict = {x: x * x for x in range(1, n + 1)}
-print(new_dict)
+new_dict = {x: x * x for x in range(1, n + 1)}  # for yordamida kvadratga oshirib oldim
+print(new_dict) # new_dict ni chop etdim
 
 # 5. Dictionary of Squares (1 to 15)
 # Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are the square of the keys.
-k =15
-new = {x: x*x for x in range(1,k+1)}
-print(new)
+k =15 # chegarani 15 deb beklgilab oldim
+new = {x: x*x for x in range(1,k+1)} # har bir sonni k gacha teng bolguncha kvadratga oshirdim
+print(new) # ozgaruvchini chop etdim
 
 # 1. Create a Set
 # Write a Python program to create a set.
@@ -70,7 +70,7 @@ print(type(new_set))
 # To'plamlarni takrorlash uchun Python dasturini yozing.
 new_set = {1,2,3,4,5,6} # new_set nomli yangi set yaratdim
 
-for i in new_set:
+for i in new_set: # set ichida aylanib chiqdim
     print(i)
 
 # 3. To'plamga a'zo(lar)ni qo'shing

@@ -1,45 +1,56 @@
 print("Welcome to homework 14")
+import requests
+import random
+import json
 """write a Python script that reads the students.jon JSON file and prints details of each student.
 """
+ 
 
-"""talabalar.jon JSON faylini o'qiydigan 
-va har bir talaba tafsilotlarini chop etadigan Python skriptini yozing."""
+students = """
+{
+    "talabalar":[
+        {
+            "name": "Ali Valiyev",
+            "age": 20,
+            "courses": ["Matematika", "Fizika"]
+        },
+        {
+            "name": "Sara Karimova",
+            "age": 22,
+            "courses": ["Biologiya", "Kimyo"]
+        },
+        {
+            "name": "Olimjon Tursunov",
+            "age": 19,
+            "courses": ["Informatika", "Matematika"]
+        }
+    ]
+}
+"""
+# print(json.loads(students)) # JSON str ni Python objectga aylantirdim (dict)
 
-# students = """
-# {
-#     "talabalar":[
-#         {
-#             "name": "Ali Valiyev",
-#             "age": 20,
-#             "courses": ["Matematika", "Fizika"]
-#         },
-#         {
-#             "name": "Sara Karimova",
-#             "age": 22,
-#             "courses": ["Biologiya", "Kimyo"]
-#         },
-#         {
-#             "name": "Olimjon Tursunov",
-#             "age": 19,
-#             "courses": ["Informatika", "Matematika"]
-#         }
-#     ]
-# }
-# #     """
-# import json
-# students_dict = json.loads(students)
-# for student in students_dict['talabalar']:
-#     print(f"Talaba ismi: {student['name']},\n"
-#           f"Talaba yoshi: {student['age']},\n"
-#           f"Talaba kurslari: {', '.join(student['courses'])}\n")
+# student_dict = json.loads(students) # python objectini student_dict degan ozgaruvchiga tenglab oldim 
+
+# stident.json degan file ochib unga student_dict ni json formatida yozdim 
+# with open('students.json', 'w') as file:
+#     json.dump(student_dict, file, indent = 4)
+
+# endi shu students.json degan file ochib o'qiymiz 
+with open('F:\Arslonbek\MySecondBrain\DataAnalitika\Python_homework\lesson-14\homework\students.json') as file:
+    students_data = json.load(file) # file dan o'qilgan json formatini python obyektiga aylantirdim 
+
+for student in students_data['talabalar']:
+    print(f"name student: {student['name']},\n"
+          f"age student: {student['age']},\n"
+          f"cources of student: {', '.join(student['courses'])}\n") 
+ 
 
 
 """Ushbu urldan foydalaning: https://openweathermap.org/
 Muayyan shahar (masalan, siz tug'ilgan shahar: Toshkent) uchun ob-havo ma'lumotlarini olish 
 va tegishli ma'lumotlarni (harorat, namlik va boshqalar) chop etish uchun so'rovlar kutubxonasidan foydalaning."""
-# import requests 
-# import json
-# city = "Tashkent"
+ 
+# city = "Tashkent" #
 # api_key = "cc34911a108a2187a6183befa646264f"
 # url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 # response = requests.get(url)
@@ -50,9 +61,9 @@ va tegishli ma'lumotlarni (harorat, namlik va boshqalar) chop etish uchun so'rov
 # wind = data['wind']['speed']
 # temperature = data['main']['temp']
 # humidity = data['main']['humidity']
-# print(f"Toshkent shahridagi hozirgi harorat: {temperature}°C")
-# print(f"Toshkent shahridagi hozirgi namlik: {humidity}%")       
-# print(f"Toshkent shahridagi hozirgi shamol tezligi: {wind} m/s")
+# print(f"Current temp in Tashkent: {temperature}°C")
+# print(f"current humidity in Tashkent: {humidity}%")       
+# print(f"current wind speed in Tashkent: {wind} m/s")
 
 
 
@@ -60,7 +71,7 @@ va tegishli ma'lumotlarni (harorat, namlik va boshqalar) chop etish uchun so'rov
 """Foydalanuvchilarga yangi kitoblar qoʻshish, 
 mavjud kitob maʼlumotlarini yangilash va books.json JSON faylidan kitoblarni 
 oʻchirish imkonini beruvchi dastur yozing."""
-# import json
+ 
 # data = """
 # {
 #     "books" : [
@@ -98,13 +109,9 @@ oʻchirish imkonini beruvchi dastur yozing."""
 """Use this url http://www.omdbapi.com/ to fetch information about movies.
 Create a program that asks users for a movie genre and recommends a random movie from that genre.
 """
-"""Filmlar haqida ma'lumot olish uchun http://www.omdbapi.com/ ushbu urldan foydalaning .
-Foydalanuvchilardan kino janrini so'raydigan va shu janrdan tasodifiy filmni tavsiya qiladigan dastur yarating.
-"""
-# import requests
-# import random
-# import json
-# genre = input("Iltimos, kino janrini kiriting: ")
+ 
+
+# genre = input("Please enter genre movie: ")
  
 # url = f"http://www.omdbapi.com/?i=tt3896198&apikey=fd9b27c6&s={genre}"
  
